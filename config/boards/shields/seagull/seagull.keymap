@@ -11,7 +11,7 @@
         compatible = "zmk,keymap";
       
     layer_numpad {
-        display-name = "numpad"; 
+        display-name = "Numpad"; 
 
     // +---------------------------+                      
     // |   7  |   8  |   9  |   *  |                      
@@ -36,7 +36,7 @@
     };
 
     layer_bluetooth {     
-        display-name = "bluetooth"; 
+        display-name = "BT"; 
   
     // +---------------------------+                      
     // |CLEAR |      |      |BTLDR |                      
