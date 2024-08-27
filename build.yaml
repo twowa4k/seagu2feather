@@ -19,5 +19,5 @@
 ---
 include:
   - board: nrf52840dk_nrf52840
-    shield: seagull
+    shield: seagull oled_adapter_pro_micro_128x32
 
