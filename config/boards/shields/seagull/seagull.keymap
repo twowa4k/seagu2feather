@@ -6,8 +6,6 @@
 #define BLUETOOTH 1 
 
 / {
-
-
     keymap {
 
         compatible = "zmk,keymap";
@@ -28,13 +26,13 @@
 
     bindings = <   
 
-        &kp KP_N7       &kp KP_N7        &kp KP_N7        &kp KP_MULTIPLY
+        &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY
         &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
         &kp KP_N1       &kp KP_N2        &kp KP_N3        &kp KP_MINUS
-        &kp KP_N0       &kp KP_DOT       &kp KP_PLUS      &kp KP_EQUAL    &tog BLUETOOTH       
+        &kp KP_N0       &kp KP_DOT       &kp KP_PLUS      &kp KP_EQUAL    &kp KP_N8      
         >;
 
-        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     layer_bluetooth {     
@@ -59,7 +57,7 @@
         &none           &none         &none           &none            &tog BLUETOOTH
         >;
 
-        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 };
 };
