@@ -11,9 +11,9 @@
     keymap {
 
         compatible = "zmk,keymap";
-        default_layer {
       
     layer_numpad {
+
 
     // +---------------------------+                      
     // |   7  |   8  |   9  |   *  |                      
