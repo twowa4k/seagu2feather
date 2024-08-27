@@ -6,6 +6,17 @@
 #define BLUETOOTH 1 
 
 / {
+
+ behaviors {
+        
+    rot_kp: behavior_sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENC_KP";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+};
+
     keymap {
 
         compatible = "zmk,keymap";
