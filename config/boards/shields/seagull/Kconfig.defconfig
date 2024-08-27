@@ -2,3 +2,5 @@ if SHIELD_SEAGULL
 
 config ZMK_KEYBOARD_NAME
     default "seagull"
+
+endif
