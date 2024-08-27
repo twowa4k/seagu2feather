@@ -39,6 +39,7 @@
 
 
  encoder: encoder {
+   status = "okay"
 		compatible = "alps,ec11";
 		label = "ENCODER";
 		a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -72,7 +73,3 @@
     };
  };
 
- &encoder {
-	status = "okay";
-  }; 
-};
