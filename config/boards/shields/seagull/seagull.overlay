@@ -20,7 +20,7 @@
 		>;
  };
 
- kscan0: kscan {
+ default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "default_kscan";
         diode-direction = "col2row";
@@ -53,7 +53,7 @@
 		triggers-per-rotation = <12>;
  };
 
-pro_micro_i2c {
+&pro_micro_i2c {
     status = "okay";
 
     oled: ssd1306@3c {
