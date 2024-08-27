@@ -7,15 +7,6 @@
 
 / {
 
- behaviors {
-        
-    rot_kp: behavior_sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ENC_KP";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-};
 
     keymap {
 
@@ -43,7 +34,7 @@
         &kp KP_N0       &kp KP_DOT       &kp KP_PLUS      &kp KP_EQUAL    &tog BLUETOOTH       
         >;
 
-        sensor-bindings = <&rot_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 
     layer_bluetooth {      
@@ -67,7 +58,7 @@
         &none           &none         &none           &none            &tog BLUETOOTH
         >;
 
-        sensor-bindings = <&rot_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 };
 };

@@ -22,7 +22,8 @@
  kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-        diode-direction = "col2row"; 
+        diode-direction = "col2row";
+        wakeup-source; 
 
         row-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 20 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
@@ -38,12 +39,11 @@
 
 
  encoder: encoder {
-    status = "okay";
 		compatible = "alps,ec11";
-		label = "ENCODER";
 		a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		steps = <48>;
+    status = "disabled";
  };
 
  sensors {
@@ -51,4 +51,9 @@
 		sensors = <&encoder>;
 		triggers-per-rotation = <12>;
  };
+ 
+ &encoder {
+    status = "okay";
+ };
+ 
  };
