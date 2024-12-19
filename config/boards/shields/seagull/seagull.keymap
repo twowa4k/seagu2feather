@@ -26,10 +26,9 @@
 
     bindings = <   
 
-        &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY
+        &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY     &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
         &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
-        &kp KP_N1       &kp KP_N2        &kp KP_N3        &tog BLUETOOTH 
-        &kp KP_N0       &kp KP_DOT       &kp KP_PLUS          
+
         >;
 
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -51,10 +50,8 @@
 
     bindings = <   
 
-        &bt BT_CLR      &none         &none           &bootloader
-        &none           &none         &none           &none  
-        &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2    &tog BLUETOOTH                         
-        &none           &none         &none                 
+        &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY     &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
+        &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE             
         >;
 
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
