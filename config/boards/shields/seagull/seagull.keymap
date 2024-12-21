@@ -6,6 +6,10 @@
 #define BLUETOOTH 1 
 
 / {
+
+&led_strip {
+    chain-length = <1>;
+};
     keymap {
 
         compatible = "zmk,keymap";
