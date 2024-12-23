@@ -1,4 +1,6 @@
 #include <dt-bindings/led/led.h>
+#include <...boards/shields/kyria/boards/nice_nano.overlay>
+
 
 &pinctrl {
     spi3_default: spi3_default {
