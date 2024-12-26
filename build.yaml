@@ -18,6 +18,6 @@
 #
 ---
 include:
-  - board: nice_nano
+  - board: nrfmicro_13_52833 
     shield: seagull 
 
