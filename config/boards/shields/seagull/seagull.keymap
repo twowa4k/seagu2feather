@@ -32,7 +32,7 @@
     bindings = <   
 
         &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY     &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
-        &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
+        &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_N4       &kp KP_N5        &kp KP_N6    &kp KP_DIVIDE
 
         >;
 
@@ -56,7 +56,7 @@
     bindings = <   
 
         &kp KP_N7       &kp KP_N8        &kp KP_N9        &kp KP_MULTIPLY     &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE
-        &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE             
+        &kp KP_N4       &kp KP_N5        &kp KP_N6        &kp KP_N4       &kp KP_N5        &kp KP_N6      &kp KP_DIVIDE             
         >;
 
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
