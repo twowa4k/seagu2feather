@@ -5,21 +5,25 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-
+#include <../boards/shields/kyria/boards/nice_nano.overlay>
+#include <dt-bindings/led/led.h>
 
 / {
 
 	chosen {
-
+   zephyr,display = &oled;
 		zmk,kscan = &kscan0;
-		
-  
-
-
-
+		zmk,matrix_transform = &default_transform;
 	};
 
-
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		columns = <15>;
+		rows = <1>;
+		map = <
+			RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)   RC(0,5)  RC(0,6)  RC(0,7)   RC(0,8)  RC(0,9)    RC(0,10)    RC(0,11)   RC(0,12)   RC(0,13)   RC(0,14)   
+		>;
+	};
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
@@ -29,7 +33,7 @@
 			<&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                         <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 			<&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-		<&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			<&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                         <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 			<&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
@@ -49,4 +53,75 @@
 	
 
 };
+
+
+
+ encoder: encoder {
+		compatible = "alps,ec11";
+		a-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		steps = <48>;
+    status = "okay";
+ };
+
+ sensors: sensors {
+		compatible = "zmk,keymap-sensors";
+		sensors = <&encoder>;
+		triggers-per-rotation = <12>;
+ };
+}; 
+&pro_micro_i2c {
+  status = "okay";
+
+ oled: ssd1306@3c {
+    compatible = "solomon,ssd1306fb";
+    reg = <0x3c>;
+    width = <128>;
+    height = <32>;
+    segment-offset = <0>;
+    page-offset = <0>;
+    display-offset = <0>;
+    multiplex-ratio = <31>;
+    com-invdir;
+    segment-remap;
+    com-sequential;
+    prechargep = <0x22>;
+  };
 };
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
+            low-power-enable;
+        };
+    };
+};
+&spi3 {
+    compatible = "nordic,nrf-spim";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+    status = "okay";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <12>; /* LED strip length */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    };
+};
+
