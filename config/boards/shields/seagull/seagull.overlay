@@ -24,12 +24,10 @@ map = <
 		>;
 
 
-        // Include the matrix driver
         matrix {
             kscan = <&kscan1>;
         };
 
-        // Include the direct GPIO driver...
         direct {
             kscan = <&kscan2>;
             row-offset = <3>; 
