@@ -1,7 +1,7 @@
 if SHIELD_SEAGULL
 
 config ZMK_KEYBOARD_NAME
-    default "seagull"
+    default "hx"
 
 if ZMK_DISPLAY
 
