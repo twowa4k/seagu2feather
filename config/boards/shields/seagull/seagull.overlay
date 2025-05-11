@@ -39,8 +39,8 @@
                         <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 			<&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 
-                        <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                        <&gpio1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+                        <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                        <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 
 
 		;
@@ -52,8 +52,8 @@
 
  encoder: encoder {
 		compatible = "alps,ec11";
-		a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		a-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		steps = <48>;
     status = "okay";
  };
