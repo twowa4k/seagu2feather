@@ -46,8 +46,8 @@
                         <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* grb */
 
                         <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm */
-                        <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo*/
-                        <&gpio1 0(GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* alt*/
+                        <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo */
+                        <&gpio1 0(GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* alt */
 
 
               
