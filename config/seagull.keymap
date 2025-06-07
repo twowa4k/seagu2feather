@@ -13,22 +13,11 @@
         layer_numpad {
             display-name = "Numpad";
 
-            // +---------------------------+                      
-            // |   7  |   8  |   9  |   *  |                      
-            // +------+------+------+------+
-            // |   4  |   5  |   6  |   /  |                      
-            // +------+------+------+------+-------+     
-            // |   1  |   2  |   3  |   *  | L-BT  |                     
-            // +------+------+------+------+-------+    
-            // |   0  |   .  |  +   |   =  |                          
-            // +------+------+------+------+  
-
-            bindings = <     { "row": 0, "col": 0, "x": 0, "y": 0 },
-        { "row": 0, "col": 1, "x": 1, "y": 0 },
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5 
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  
-&kp A  &kp B  &kp C  &kp D  &kp E 
-&kp E &kp E &kp E &kp O &kp O &kp O
+            bindings = <
+                &kp N7 &kp N8 &kp N9 &kp ASTERISK
+                &kp N4 &kp N5 &kp N6 &kp SLASH
+                &kp N1 &kp N2 &kp N3 &kp MINUS &bt BT_SEL
+                &kp N0 &kp DOT &kp PLUS &kp EQUAL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -37,21 +26,11 @@
         layer_bluetooth {
             display-name = "BT";
 
-            // +---------------------------+                      
-            // |CLEAR |      |      |BTLDR |                      
-            // +------+------+------+------+
-            // |      |      |      |      |                      
-            // +------+------+------+------+-------+     
-            // | PF1  | PF2  |  PF3 |      | L-BT  |                      
-            // +------+------+------+------+-------+    
-            // |      |      |      |      |                          
-            // +------+------+------+------+     
-
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5 
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  
-&kp A  &kp B  &kp C  &kp D  &kp E 
-&kp E &kp E &kp E &kp O &kp O &kp O
+                &kp CLEAR &none &none &bt BT_BOOT
+                &none &none &none &none
+                &kp PF1 &kp PF2 &kp PF3 &none &bt BT_SEL
+                &none &none &none &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
