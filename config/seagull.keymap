@@ -13,11 +13,18 @@
         layer_numpad {
             display-name = "Numpad";
 
+            // +---------------------------+                      
+            // |   7  |   8  |   9  |   *  |                      
+            // +------+------+------+------+
+            // |   4  |   5  |   6  |   /  |                      
+            // +------+------+------+------+-------+     
+            // |   1  |   2  |   3  |   *  | L-BT  |                     
+            // +------+------+------+------+-------+    
+            // |   0  |   .  |  +   |   =  |                          
+            // +------+------+------+------+  
+
             bindings = <
-                &kp N7 &kp N8 &kp N9 &kp ASTERISK
-                &kp N4 &kp N5 &kp N6 &kp SLASH
-                &kp N1 &kp N2 &kp N3 &kp MINUS &bt BT_SEL
-                &kp N0 &kp DOT &kp PLUS &kp EQUAL
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp A  &kp B  &kp C  &kp D  &kp E &kp E &kp E &kp E &kp O
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -26,11 +33,18 @@
         layer_bluetooth {
             display-name = "BT";
 
+            // +---------------------------+                      
+            // |CLEAR |      |      |BTLDR |                      
+            // +------+------+------+------+
+            // |      |      |      |      |                      
+            // +------+------+------+------+-------+     
+            // | PF1  | PF2  |  PF3 |      | L-BT  |                      
+            // +------+------+------+------+-------+    
+            // |      |      |      |      |                          
+            // +------+------+------+------+     
+
             bindings = <
-                &kp CLEAR &none &none &bt BT_BOOT
-                &none &none &none &none
-                &kp PF1 &kp PF2 &kp PF3 &none &bt BT_SEL
-                &none &none &none &none
+&kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G  &kp H  &mo 1  &kp N1  &kp N2  &kp N3  &bt BT_NXT  &kp N5  &kp N6 &kp E &kp E &kp E &kp 9
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
