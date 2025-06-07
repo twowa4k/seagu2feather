@@ -23,16 +23,16 @@
 		label = "KSCAN";
 		input-gpios =
 			<&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-			<&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			<&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr */
                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                         <&gpio1 7(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 			<&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 
                         <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                        <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-			<&gpio1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-                        <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-			<&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+                        <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 */
+			<&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 */
+                        <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwl */
+			<&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwr */
 
                         <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* l enc1a */
                         <&gpio0 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* m 0.18 */
@@ -44,7 +44,9 @@
 			<&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glb */
                         <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grf */
                         <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grb */
-                        <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* grb */
+
+                        <&gpio1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* n3
+*/
 
 
 		;
