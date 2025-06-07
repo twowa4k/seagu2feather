@@ -46,7 +46,7 @@
                         <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grb */
 
                         <&gpio1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* 1 12 */
-*/
+
 
 
 		;
