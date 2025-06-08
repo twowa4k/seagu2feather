@@ -23,13 +23,13 @@
             // +------+------+------+------+  
 
             bindings = <
-&kp N0  &kp N1     &kp N2  &kp N3
-&kp N4  &kp N5     &kp N6  &kp N7
-&kp L   &kp M      &kp B   &kp T   &kp R
-&kp UP  &kp RIGHT  &kp F   &kp G
-&kp H   &kp I      &kp K
-&kp L   &kp O      &kp P   &kp M
-&kp L   &kp O 
+&kp N0  &kp N1  &kp N2  &kp N3
+&kp N4  &kp N5  &kp N6  &kp N7
+&kp L   &kp M   &kp B   &kp T   &kp R
+&kp A   &kp C   &kp D   &kp E
+&kp G   &kp H   &kp I
+&kp K   &kp N   &kp O   &kp P
+&kp S   &kp U
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -55,7 +55,7 @@
 &kp N5  &kp N6  &kp N7  &kp N9
 &kp N8  &kp N7  &kp N6
 &kp N6  &kp N8  &kp N7  &kp N6
-&kp L   &kp O 
+&kp L   &kp O
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
