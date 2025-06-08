@@ -53,7 +53,12 @@
 
 			<&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gl 1.4 */
 			<&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr 1.5 */
-                           <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* sr 0.3 */
+
+                        <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* cp fin0.21 */
+			<&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste fin 0.22 */
+
+
+                           <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
                         
   
                         
