@@ -32,7 +32,8 @@
                         <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* copy gwl 1.15 */
 			<&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste gwr 1.10 */
                         <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
-			
+			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
+<&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
 
                         <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* l enc1a 0.4 */
                         <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* m 0.18 */
@@ -51,10 +52,10 @@
 
 			<&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gl 1.4 */
 			<&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr 1.5 */
-                        <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 */
-                        <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
+                        <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* gr2 0.19 */
+                        
   
-                         <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* n4 1.8 */
+                        
 
 
               
