@@ -36,6 +36,7 @@
 &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE   &kp KP_DIVIDE    &kp KP_DIVIDE
 &kp KP_N4       &kp KP_N5        &kp KP_N6      &kp KP_N4       &kp KP_N5     
 &kp KP_N6    &kp KP_DIVIDE  &kp KP_DIVIDE  &kp KP_DIVIDE  &kp KP_DIVIDE
+&kp KP_N4       &kp KP_N5        &kp KP_N6      &kp KP_N4    
         >;
 
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -60,6 +61,8 @@
 &kp KP_N5        &kp KP_N6        &kp KP_DIVIDE   &kp KP_DIVIDE    &kp KP_DIVIDE
 &kp KP_N4       &kp KP_N5        &kp KP_N6      &kp KP_N4       &kp KP_N5     
 &kp KP_N6    &kp KP_DIVIDE  &kp KP_DIVIDE  &kp KP_DIVIDE  &kp KP_DIVIDE 
+&kp KP_N4       &kp KP_N5        &kp KP_N6      &kp KP_N4    
+
         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 };
