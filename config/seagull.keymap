@@ -7,27 +7,6 @@
 
 / {
     macros {
-        rx90: rx90 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp R &kp X &kp N9 &kp N0 &kp RET>;
-            label = "RX90";
-        };
-
-        rz90: rz90 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp R &kp Z &kp N9 &kp N0 &kp RET>;
-            label = "RZ90";
-        };
-
-        ry90: rz90 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp R &kp Y &kp N9 &kp N0 &kp RET>;
-            label = "RZ90";
-        };
-
         sz0: sz0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -54,6 +33,27 @@
             #binding-cells = <0>;
             bindings = <&none &kp N0 &kp RET>;
             label = "O0";
+        };
+
+        rz90: rz90 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp Z &kp N9 &kp N0 &kp RET>;
+            label = "RZ90";
+        };
+
+        rx90: rx90 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp X &kp N9 &kp N0 &kp RET>;
+            label = "RX90";
+        };
+
+        ry90: ry90 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp Y &kp N9 &kp N0 &kp RET>;
+            label = "RY90";
         };
     };
 
