@@ -39,12 +39,12 @@
             // +------+------+------+------+  
 
             bindings = <
-&kp N0     &kp N1     &kp N2    &kp N3
-&kp LC(C)  &kp LC(V)  &rx90     &rz90
-&kp LEFT   &kp M      &kp DOWN  &kp UP  &kp RIGHT
-&kp A      &kp C      &kp D     &kp E
+&kp ESC    &kp N1     &kp LSHFT  &kp LCTRL
+&kp LC(C)  &kp LC(V)  &rx90      &kp LALT
+&kp LEFT   &kp M      &kp DOWN   &kp UP     &kp RIGHT
+&kp A      &kp C      &kp LC(V)  &kp LC(C)
 &mo 1      &mo 2      &kp I
-&kp K      &kp N      &kp O     &kp P
+&kp K      &kp N      &kp O      &kp P
 &kp S      &kp U
             >;
 
