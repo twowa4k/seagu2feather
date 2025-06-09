@@ -43,7 +43,7 @@
 &kp LC(C)  &kp LC(V)  &rx90     &rz90
 &kp LEFT   &kp M      &kp DOWN  &kp UP  &kp RIGHT
 &kp A      &kp C      &kp D     &kp E
-&kp G      &kp H      &kp I
+&mo 1      &kp H      &kp I
 &kp K      &kp N      &kp O     &kp P
 &kp S      &kp U
             >;
