@@ -6,6 +6,22 @@
 #define BLUETOOTH 1
 
 / {
+    macros {
+        rx90: rx90 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp X &kp N9 &kp N0 &kp RET>;
+            label = "RX90";
+        };
+
+        rz90: rz90 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp R &kp Z &kp N9 &kp N0 &kp RET>;
+            label = "RZ90";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -24,7 +40,7 @@
 
             bindings = <
 &kp N0     &kp N1     &kp N2    &kp N3
-&kp LC(C)  &kp LC(V)  &kp N6    &kp N7
+&kp LC(C)  &kp LC(V)  &rx90     &rz90
 &kp LEFT   &kp M      &kp DOWN  &kp UP  &kp RIGHT
 &kp A      &kp C      &kp D     &kp E
 &kp G      &kp H      &kp I
