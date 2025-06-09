@@ -74,7 +74,7 @@
             // +------+------+------+------+  
 
             bindings = <
-&kp ESC    &kp TAB    &kp LSHFT  &kp LCTRL
+&kp ESC    &kp TAB    &kp LCTRL  &kp LSHFT
 &kp LC(C)  &kp LC(V)  &rx90      &kp LALT
 &kp LEFT   &kp M      &kp DOWN   &kp UP     &kp RIGHT
 &kp A      &kp C      &kp LC(V)  &kp LC(C)
