@@ -76,7 +76,7 @@
             bindings = <
 &kp ESC    &kp TAB    &kp LCTRL  &kp LSHFT
 &kp LC(C)  &kp LC(V)  &rx90      &kp LALT
-&kp LEFT   &kp M      &kp DOWN   &kp UP     &kp RIGHT
+&kp END    &kp FSLH   &kp PG_UP  &kp HOME   &kp PG_DN
 &kp A      &kp C      &kp LC(V)  &kp LC(C)
 &mo 1      &mo 2      &kp I
 &kp K      &kp N      &kp O      &kp P
