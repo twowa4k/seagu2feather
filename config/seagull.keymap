@@ -125,7 +125,7 @@
             bindings = <
 &kp N1    &kp N2   &kp N3     &kp N4
 &kp N5    &kp N6   &kp N7     &kp N8
-&kp KP_N1  &kp NPSLASH   &kp KP_N3   &kp KP_MINUS &kp KP_PLUS 
+&kp KP_N1  &kp KP_DIVIDE   &kp KP_N3   &kp KP_N7 &kp KP_PLUS 
 &kp N4    &kp N3   &kp N2     &kp N1
 &kp N2    &kp N3   &kp N4
 &kp N5    &kp N6   &kp N7     &kp N8
