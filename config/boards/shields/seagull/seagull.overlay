@@ -49,7 +49,7 @@
 
                         <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
                         <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
-                        <&gpio1 0(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* alt 0.1nfc statt 1.0 */
+                        <&gpio0 1(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* alt 0.1nfc statt 1.0 */
 
 			<&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* l enc1a 0.4-nc */
 			<&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin 1.9 qmo2led statt gtr 1.7-nc */
