@@ -71,6 +71,13 @@
 
             label = "TASKMANAGER";
         };
+
+        w: w {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "W";
+        };
     };
 
     keymap {
@@ -90,22 +97,22 @@
             // +------+------+------+------+  
 
             bindings = <
-                     &mo 1      &mo 2
-                                &kp N7
+                       &mo 1      &mo 2
+                                  &kp N7
 
-&kp ESC                         &kp LCTRL
-&kp TAB                         &kp LSHFT
-          &kp LC(C)  &kp LC(V)
-&kp N1                          &kp N2
-&kp N3                          &kp N4
+&kp ESC                           &kp LCTRL
+&kp TAB                           &kp LSHFT
+            &kp LC(C)  &kp LC(V)
+&kp LG(N1)                        &kp LALT
+&kp N3                            &kp N4
 
-          &kp UP
-&kp LEFT  &kp RET    &kp RIGHT
-          &kp DOWN
+            &kp UP
+&kp LEFT    &kp RET    &kp RIGHT
+            &kp DOWN
 
-                     &kp T
-&kp N5    &kp C                 &kp P      &kp N6
-                     &kp B
+                       &kp T
+&kp N5      &kp C                 &kp P      &kp N6
+                       &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
