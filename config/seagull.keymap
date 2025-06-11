@@ -90,13 +90,22 @@
             // +------+------+------+------+  
 
             bindings = <
-&kp ESC    &kp TAB       &kp LCTRL  &kp LSHFT
-&kp LC(C)  &kp LC(V)     &sl 1      &kp LALT
-&kp LEFT   &taskmanager  &kp DOWN   &kp UP     &kp RIGHT
-&kp A      &kp C         &kp LC(V)  &kp LC(C)
-&mo 1      &mo 2         &kp W
-&kp K      &kp N         &kp O      &kp P
-&kp S      &kp U
+                     &mo 1     &mo 2
+                               &kp N7
+
+&kp ESC                        &kp LCTRL
+&kp TAB                        &kp LSHFT
+          &kp LALT   &kp LEFT
+&kp N1                         &kp N2
+&kp N3                         &kp N4
+
+          &kp LEFT
+&kp DOWN  &kp RET    &kp UP
+          &kp RIGHT
+
+                     &kp T
+&kp N5    &kp C                &kp P      &kp N6
+                     &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -116,13 +125,22 @@
             // +------+------+------+------+     
 
             bindings = <
-&kp N6  &kp N9  &kp N8  &kp N7
-&kp N6  &kp N5  &kp N4  &kp N3
-&ry90   &sz0    &o0     &rz90   &rx90
-&kp N5  &kp N6  &kp N7  &kp N9
-&kp N8  &kp N7  &kp N6
-&kp N6  &kp N8  &kp N7  &kp N6
-&kp L   &kp O
+                &kp N6  &kp N9
+                        &kp N8
+
+&kp N7                  &kp N6
+&kp N5                  &kp N4
+        &kp N3  &ry90
+&sz0                    &o0
+&rz90                   &rx90
+
+        &kp N5
+&kp N6  &kp N7  &kp N9
+        &kp N8
+
+                &kp N7
+&kp N6  &kp N6          &kp N8  &kp N7
+                &kp N6
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
@@ -131,13 +149,22 @@
         layer_2 {
             display-name = "Numpad";
             bindings = <
-&kp N1     &kp N2         &kp N3     &kp N4
-&kp N5     &kp N6         &kp N7     &kp N8
-&kp KP_N1  &kp KP_DIVIDE  &kp KP_N9  &kp KP_N7  &kp KP_N3
-&kp N4     &kp N3         &kp N2     &kp N1
-&kp N2     &kp N3         &kp N4
-&kp N5     &kp N6         &kp N7     &kp N8
-&kp N9     &kp N0
+                       &kp N1     &kp N2
+                                  &kp N3
+
+&kp N4                            &kp N5
+&kp N6                            &kp N7
+               &kp N8  &kp KP_N1
+&kp KP_DIVIDE                     &kp KP_N9
+&kp KP_N7                         &kp KP_N3
+
+               &kp N4
+&kp N3         &kp N2  &kp N1
+               &kp N2
+
+                       &kp N3
+&kp N4         &kp N5             &kp N6     &kp N7
+                       &kp N8
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
