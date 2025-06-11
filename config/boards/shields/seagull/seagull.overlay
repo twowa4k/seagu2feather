@@ -35,7 +35,7 @@
                         <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
 			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
                      
-                        <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gl 1.4 provod--- */
+                        <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GL 1.4 provod--- */
                         <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* m 0.18 */
 			<&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* b 1.1 */
                         <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* t 1.3 */
@@ -44,21 +44,18 @@
                         <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin t 1.0*/
 			<&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin b 0.23 */
                         <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin gtl 1.6 */
-                        <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr 1.5 provod--- */
+                        <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GR 1.5 provod--- */
        
 
                         <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
                         <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
                         <&gpio1 0(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* alt 0.1nfc statt 1.0 */
 
-			<&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* l enc1a 0.4-nc */
-			<&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin 1.9 qmo2led statt gtr 1.7-nc */
-
-                        <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* cp fin0.21 */
-			<&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste fin 0.22 */
+                        <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top copy fin0.21 */
+			<&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top paste fin 0.22 */
 
                            <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
-                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* gr2 0.19 ---sdvig--- */
+                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* gr2 0.19 24buttons a ne 26 */
   
                         
 
