@@ -53,9 +53,9 @@
 
                         <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin t 1.0*/
                       <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top copy fin0.21 */
-                      <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin gtl 1.6 */
-		      <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GR 1.5 provod--- */
-                     <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top paste fin 0.22 */
+                      <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GR 1.5 provod--- */
+                      <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin GTL 1.6 naoborot F */
+		      <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top paste fin 0.22 */
                       <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* fin b 0.23 */
 
 
