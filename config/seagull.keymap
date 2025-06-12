@@ -110,12 +110,12 @@
 &kp LEFT    &kp RET    &kp RIGHT
             &kp DOWN
 
-                       &kp T
+                       &kp S
 &kp N5      &kp C                 &kp P      &kp N6
                        &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp LC(Z) C_VOL_DN>;
         };
 
         layer_bluetooth {
