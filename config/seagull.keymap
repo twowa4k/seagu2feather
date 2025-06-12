@@ -115,7 +115,7 @@
                        &kp B
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp LC(Y) LC(Z)>;
         };
 
         layer_bluetooth {
