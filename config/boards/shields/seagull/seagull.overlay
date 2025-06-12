@@ -81,14 +81,14 @@
 		compatible = "alps,ec11";
 		a-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <32>;
+		steps = <16>;
     status = "okay";
  };
 
  sensors: sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&encoder>;
-		triggers-per-rotation = <6>;
+		triggers-per-rotation = <16>;
  };
 }; 
 &pro_micro_i2c {
