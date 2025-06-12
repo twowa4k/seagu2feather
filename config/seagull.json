@@ -3,13 +3,11 @@
     "default_layout": {
       "name": "default_layout",
       "layout": [
-        // Objekt 1 (links, 2 Zeilen, Spalten 1-2)
         { "row": 0, "col": 1, "x": 1, "y": 0 },
         { "row": 0, "col": 2, "x": 2, "y": 0 },
         { "row": 1, "col": 1, "x": 1, "y": 1 },
         { "row": 1, "col": 2, "x": 2, "y": 1 },
 
-        // Objekt 2 (rechts, 6 Zeilen, Spalten 6-11)
         { "row": 0, "col": 6, "x": 6, "y": 0 },
         { "row": 0, "col": 7, "x": 7, "y": 0 },
         { "row": 0, "col": 8, "x": 8, "y": 0 },
@@ -27,9 +25,6 @@
         { "row": 4, "col": 6, "x": 6, "y": 4 },
         { "row": 5, "col": 6, "x": 6, "y": 5 },
 
-        // Row 6 frei — Abstand
-
-        // Objekt 3 (links, 3 Zeilen, Spalten 1-2), jetzt ab Row 7
         { "row": 7, "col": 1, "x": 1, "y": 7 },
         { "row": 7, "col": 2, "x": 2, "y": 7 },
         { "row": 8, "col": 1, "x": 1, "y": 8 },
@@ -37,7 +32,6 @@
         { "row": 9, "col": 1, "x": 1, "y": 9 },
         { "row": 9, "col": 2, "x": 2, "y": 9 },
 
-        // Objekt 4 (rechts, 3 Zeilen, Spalten 6-8), jetzt ab Row 7
         { "row": 7, "col": 6, "x": 6, "y": 7 },
         { "row": 7, "col": 7, "x": 7, "y": 7 },
         { "row": 7, "col": 8, "x": 8, "y": 7 },
@@ -47,10 +41,6 @@
         { "row": 9, "col": 6, "x": 6, "y": 9 },
         { "row": 9, "col": 7, "x": 7, "y": 9 },
         { "row": 9, "col": 8, "x": 8, "y": 9 }
-
-        
-     
-
       ]
     }
   },
