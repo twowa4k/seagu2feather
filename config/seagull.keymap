@@ -160,7 +160,7 @@
                                                    &kp N6
 
 &sy0                                               &sx0
-&sz0                                               &kp M
+&sz0                                               &kp LGUI
                  &kp LS(L)        &kp LS(R)
 &kp KP_DIVIDE                                      &kp KP_N9
 &kp KP_N7                                          &kp KP_N3
