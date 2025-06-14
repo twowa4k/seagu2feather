@@ -132,11 +132,11 @@
             // +------+------+------+------+     
 
             bindings = <
-                           &kp N1             &kp N2
+                           &kp F5             &mo 1
                                               &kp N3
 
 &sy0                                          &sx0
-&sz0                                          &kp N
+&sz0                                          &kp LC(B)
         &kp LS(D)          &kp LC(D)
 &kp N7                                        &kp N8
 &kp U                                         &kp V
