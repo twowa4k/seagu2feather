@@ -98,10 +98,10 @@
 
             bindings = <
                        &mo 1      &mo 2
-                                  &kp N7
+                                  &kp N0
 
-&kp ESC                           &kp LCTRL
-&kp TAB                           &kp LSHFT
+&kp Z                             &kp LCTRL
+&kp Y                             &kp LSHFT
             &kp LC(C)  &kp LC(V)
 &kp LG(N1)                        &kp LGUI
 &kp N3                            &kp N4
@@ -111,7 +111,7 @@
             &kp DOWN
 
                        &kp S
-&kp N5      &kp C                 &kp P      &kp N6
+&kp N5      &kp TAB               &kp ESC    &kp N6
                        &kp B
             >;
 
