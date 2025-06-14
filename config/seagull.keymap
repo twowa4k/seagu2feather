@@ -112,7 +112,7 @@
 
                        &kp S
 &kp N5      &kp TAB               &kp ESC    &kp N6
-                       &kp B
+                       &kp M
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Y) LC(Z)>;
@@ -161,7 +161,7 @@
 
 &sz0                                               &kp N5
 &sy0                                               &kp N7
-                 &kp N8           &kp KP_N1
+                 &kp LS(L)        &kp LS(R)
 &kp KP_DIVIDE                                      &kp KP_N9
 &kp KP_N7                                          &kp KP_N3
 
