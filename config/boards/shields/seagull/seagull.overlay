@@ -27,7 +27,7 @@
 
                          <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
                          <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
-                        <&gpio0 3(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 1.2 alt 0.1nfc statt 1.0 */
+                        <&gpio1 2(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 1.2 alt 0.1nfc statt 1.0 */
 
 
 
@@ -41,7 +41,7 @@
 
                         <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
 			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
-                         <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 0 3 sr 0.3 */
+                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 0 3 sr 0.3 */
                          <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 rabotaet kal L m3bot a ona ne podklu4ena posheme 0.9 - ne rab F */
 
   
