@@ -30,6 +30,7 @@
                         <&gpio1 2(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* alt 0.1nfc statt 1.0 */
 
 
+
                        <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glf 1.13 */
 		       <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grf 0.30 */
 	                <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glb 0.31 */
@@ -37,10 +38,12 @@
 
                         <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* copy gwl 1.15 */
 			<&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste gwr 1.10 */
+
                         <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
 			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
-                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
-                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 24buttons a ne 26 */
+                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sr 0.3 */
+                         <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 rabotaet kal L m3bot a ona ne podklu4ena F */
+
   
 
                         <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* t 1.3 */
