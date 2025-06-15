@@ -159,10 +159,10 @@
                                   &kp N4           &kp N5
                                                    &kp N6
 
-&sy0                                               &sx0
-&sz0                                               &kp LGUI
+&sy0                                               &kp LGUI
+&sz0                                               &kp LA(B)
                  &kp LS(L)        &kp LS(R)
-&kp KP_DIVIDE                                      &kp KP_N9
+&kp KP_DIVIDE                                      &kp LALT
 &kp KP_N7                                          &kp KP_N3
 
                  &kp KP_NUMBER_7
