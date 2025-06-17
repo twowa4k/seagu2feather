@@ -150,7 +150,7 @@
                              &kp LS(LC(LA(B)))
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
+            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
         };
 
         layer_2 {
