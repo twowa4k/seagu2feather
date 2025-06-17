@@ -27,7 +27,7 @@
 
                          <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
                          <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
-                        <&gpio1 2(GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 1.2 alt 0.1nfc statt 1.0 */
+                        <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 1.2 alt 0.1nfc statt 1.0 */
 
 
 
