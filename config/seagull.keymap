@@ -103,7 +103,7 @@
 &kp Y                             &kp LCTRL
 &kp Z                             &kp LSHFT
             &kp LC(C)  &kp LC(V)
-&kp LG(N1)                        &kp LGUI
+&kp LG(N1)                        &kp LALT
 &kp F5                            &kp N4
 
             &kp UP
@@ -138,7 +138,7 @@
 &sy0                                            &sx0
 &sz0                                            &kp LC(B)
           &kp LS(D)          &kp LC(D)
-&kp N7                                          &kp L
+&kp N7                                          &kp LGUI
 &kp LALT                                        &kp V
 
           &ry90
