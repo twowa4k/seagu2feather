@@ -1,6 +1,3 @@
-// board: feather_nrf52840_express
-// zmk + kscan + encoder + battery + layer led on NeoPixel (P0.16)
-
 / {
     chosen {
         zephyr,display = &oled;
@@ -11,45 +8,51 @@
         compatible = "zmk,kscan-gpio-direct";
         label = "KSCAN";
         input-gpios =
-            <&gpio0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D0 */
-            <&gpio0 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D1 */
-            <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D2 */
-            <&gpio1 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D3 */
-            <&gpio1 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D4 */
-            <&gpio1 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D5 */
-            <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D6 */
-            <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D9 */
-            <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D10 */
-            <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D11 */
-            <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D12 */
-            <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  /* D13 */
+            <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
-    encoder: encoder {
+    encoder0: encoder_0 {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* A0 */
-        b-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* A1 */
+        a-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <24>;
         status = "okay";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder0>;
+        triggers-per-rotation = <12>;
     };
 
     leds {
         compatible = "gpio-leds";
         layer_led: led_layer {
-            gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;  // NeoPixel data pin (P0.16)
+            gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
             label = "Layer NeoPixel";
         };
     };
 
     battery {
         compatible = "zmk,battery";
-        io-channels = <&adc 2>;  // A0 = P0.04 = AIN2
+        io-channels = <&adc 2>;
         label = "Battery";
         status = "okay";
     };
 
     zephyr,user {
-        io-channels = <&adc 2>;  // same as battery
+        io-channels = <&adc 2>;
     };
 };
 
@@ -58,44 +61,25 @@
     #io-channel-cells = <1>;
 };
 
-              
-
-
-
-
-
- encoder: encoder {
-		compatible = "alps,ec11";
-		a-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <24>;
-    status = "okay";
- };
-
- sensors: sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&encoder>;
-		triggers-per-rotation = <12>;
- };
-}; 
 &pro_micro_i2c {
-  status = "okay";
+    status = "okay";
 
- oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    com-invdir;
-    segment-remap;
-    com-sequential;
-    prechargep = <0x22>;
-  };
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        com-invdir;
+        segment-remap;
+        com-sequential;
+        prechargep = <0x22>;
+    };
 };
+
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
@@ -110,9 +94,9 @@
         };
     };
 };
+
 &spi3 {
     compatible = "nordic,nrf-spim";
-
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
     pinctrl-names = "default", "sleep";
@@ -120,17 +104,12 @@
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
-
-        /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
+        reg = <0>;
         spi-max-frequency = <4000000>;
-
-        /* WS2812 */
-        chain-length = <12>; /* LED strip length */
+        chain-length = <12>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
-
 
