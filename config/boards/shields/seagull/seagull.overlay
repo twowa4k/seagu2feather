@@ -1,82 +1,66 @@
-/*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
-#include <dt-bindings/zmk/matrix_transform.h>
-#include <../boards/shields/kyria/boards/nice_nano.overlay>
-#include <dt-bindings/led/led.h>
+// board: feather_nrf52840_express
+// zmk + kscan + encoder + battery + layer led on NeoPixel (P0.16)
 
 / {
+    chosen {
+        zephyr,display = &oled;
+        zmk,kscan = &kscan0;
+    };
 
-	chosen {
-   zephyr,display = &oled;
-		zmk,kscan = &kscan0;
-	
-	};
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+        input-gpios =
+            <&gpio0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D0 */
+            <&gpio0 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D1 */
+            <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D2 */
+            <&gpio1 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D3 */
+            <&gpio1 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D4 */
+            <&gpio1 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D5 */
+            <&gpio1 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D6 */
+            <&gpio0 26 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D9 */
+            <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D10 */
+            <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D11 */
+            <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D12 */
+            <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  /* D13 */
+    };
 
+    encoder: encoder {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* A0 */
+        b-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  /* A1 */
+        steps = <24>;
+        status = "okay";
+    };
 
+    leds {
+        compatible = "gpio-leds";
+        layer_led: led_layer {
+            gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;  // NeoPixel data pin (P0.16)
+            label = "Layer NeoPixel";
+        };
+    };
 
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-direct";
-		label = "KSCAN";
-		input-gpios =
+    battery {
+        compatible = "zmk,battery";
+        io-channels = <&adc 2>;  // A0 = P0.04 = AIN2
+        label = "Battery";
+        status = "okay";
+    };
 
+    zephyr,user {
+        io-channels = <&adc 2>;  // same as battery
+    };
+};
 
-
-                         <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
-                         <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
-                        <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sol 1.10 statt 0.1 nfc  */
-
-
-
-                       <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glf 1.13 */
-		       <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grf 0.30 */
-	                <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glb 0.31 */
-                        <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grb 1.11 */
-
-                        <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* copy gwl 1.15 */
-			<&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste gwr 1.10 */
-
-                        <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
-			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
-                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 0 3 sr 0.3 */
-                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 rabotaet kak L m3bot no ona ne podklu4ena po scheme 0.9 - ne rab F */
-
-  
-
-                        <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* t 1.3 */
-                        <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GL 1.4 provod statt 0.19sckq_spi --- */
-                        <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* m 0.18 */
-                        <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* r enc1b 0.5 */
-                         <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* b 1.1 */
-                     
-
-
-                        <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin t 1.0*/
-                      <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top copy fin0.21 */
-                      <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GR 1.5  provod soll GTR1.07 FV F --- */
-                      <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin GTL 1.6 naoborot F */
-		      <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top paste fin 0.22 */
-                      <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* fin b 0.23 */
-
-
-
-                     
-			
-
-                        
-
+&adc {
+    status = "okay";
+    #io-channel-cells = <1>;
+};
 
               
 
 
-
-		;
-	
-
-};
 
 
 
