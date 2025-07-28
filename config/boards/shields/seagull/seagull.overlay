@@ -145,4 +145,23 @@
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
+
+&i2c0 {
+    status = "okay";
+    sda-pin = <26>;  // Feather D0 (P0.26)
+    scl-pin = <27>;  // Feather D1 (P0.27)
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-inverted = <false>;
+    };
+};
+
+
 };
