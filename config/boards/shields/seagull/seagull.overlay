@@ -6,6 +6,7 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
         input-gpios =
             <&gpio0 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
             <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
@@ -50,21 +51,31 @@
 
 &i2c0 {
     status = "okay";
-    sda-pin = <26>;  // Feather D0
-    scl-pin = <27>;  // Feather D1
+
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
 
     oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
+        compatible = "solomon,ssd1306fb-i2c";
         reg = <0x3c>;
         width = <128>;
         height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;  // 64 - 1
-        com-invdir;
-        segment-remap;
-        com-sequential;
-        prechargep = <0x22>;
+        label = "SSD1306";
+    };
+};
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26) NRF_PSEL(TWIM_SCL, 0, 27)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26) NRF_PSEL(TWIM_SCL, 0, 27)>;
+            low-power-enable;
+        };
     };
 };
