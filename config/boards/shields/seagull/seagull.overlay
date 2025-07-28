@@ -1,148 +1,74 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
+ * Feather-compatible shield for ZMK with SSD1306 OLED 128x64 I2C
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <../boards/shields/kyria/boards/nice_nano.overlay>
-#include <dt-bindings/led/led.h>
 
 / {
-
-	chosen {
-   zephyr,display = &oled;
-		zmk,kscan = &kscan0;
-	
-	};
-
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-direct";
-		label = "KSCAN";
-		input-gpios =
-
-
-
-                         <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* mo 0.9 */
-                         <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gwm 0.11 */
-                        <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* sol 1.10 statt 0.1 nfc  */
-
-
-
-                       <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glf 1.13 */
-		       <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grf 0.30 */
-	                <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* glb 0.31 */
-                        <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* grb 1.11 */
-
-                        <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* copy gwl 1.15 */
-			<&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* paste gwr 1.10 */
-
-                        <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n3 0.12*/
-			 <&gpio1 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* n4 1.8 */
-                         <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* war 0 3 sr 0.3 */
-                         <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* gr2 0.19 rabotaet kak L m3bot no ona ne podklu4ena po scheme 0.9 - ne rab F */
-
-  
-
-                        <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* t 1.3 */
-                        <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GL 1.4 provod statt 0.19sckq_spi --- */
-                        <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* m 0.18 */
-                        <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* r enc1b 0.5 */
-                         <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* b 1.1 */
-                     
-
-
-                        <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin t 1.0*/
-                      <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top copy fin0.21 */
-                      <&gpio1 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* GR 1.5  provod soll GTR1.07 FV F --- */
-                      <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* fin GTL 1.6 naoborot F */
-		      <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>, /* Top paste fin 0.22 */
-                      <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> /* fin b 0.23 */
-
-
-
-                     
-			
-
-                        
-
-
-              
-
-
-
-		;
-	
-
-};
-
-
-
- encoder: encoder {
-		compatible = "alps,ec11";
-		a-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <24>;
-    status = "okay";
- };
-
- sensors: sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&encoder>;
-		triggers-per-rotation = <12>;
- };
-}; 
-&pro_micro_i2c {
-  status = "okay";
-
- oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    com-invdir;
-    segment-remap;
-    com-sequential;
-    prechargep = <0x22>;
-  };
-};
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
-        };
+    chosen {
+        zephyr,display = &oled;
+        zmk,kscan = &kscan0;
     };
 
-    spi3_sleep: spi3_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
-            low-power-enable;
-        };
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+        input-gpios =
+            <&gpio0 9  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio1 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+
+    encoder: encoder {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <24>;
+        status = "okay";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder>;
+        triggers-per-rotation = <12>;
     };
 };
-&spi3 {
-    compatible = "nordic,nrf-spim";
 
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-1 = <&spi3_sleep>;
-    pinctrl-names = "default", "sleep";
+/* Подключение дисплея через стандартный i2c0 */
+&i2c0 {
     status = "okay";
+    sda-pin = <26>;  // P0.26 (можно заменить при необходимости)
+    scl-pin = <27>;  // P0.27
 
-    led_strip: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-
-        /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
-        spi-max-frequency = <4000000>;
-
-        /* WS2812 */
-        chain-length = <12>; /* LED strip length */
-        spi-one-frame = <0x70>;
-        spi-zero-frame = <0x40>;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-inverted = <false>;
     };
 };
